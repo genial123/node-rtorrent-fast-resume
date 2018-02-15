@@ -35,6 +35,19 @@ module.exports = async (torrentBuf, dataPath) => {
             length: torrentLength
         }];
     }
+    else {
+        try {
+            const subdirPath = path.join(dataPath, torrentName);
+            const subdirStat = await fs.statAsync(subdirPath);
+
+            if (subdirStat.isDirectory()) {
+                dataPath = subdirPath;
+            }
+        }
+        catch (e) {
+            /* noop */
+        }
+    }
 
     /* Process files */
     const processFile = async (torrentFile) => {
