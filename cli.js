@@ -8,7 +8,7 @@ const fastResume = require('./index');
 
 /*
  * Usage:
- * rtorrent-fast-resume [base-directory] < plan.torrent > with_fast_resume.torrent
+ * rtorrent-fast-resume [base-directory] < plain.torrent > with_fast_resume.torrent
  * rtorrent-fast-resume [base-directory] plain.torrent [with_fast_resume.torrent]
  */
 
@@ -54,7 +54,7 @@ const fastResume = require('./index');
     }
     catch (e) {
         process.stderr.write(`${e.message}\n\n`);
-        process.stderr.write('Usage:\trtorrent-fast-resume [base-directory] < plan.torrent > with_fast_resume.torrent\n');
+        process.stderr.write('Usage:\trtorrent-fast-resume [base-directory] < plain.torrent > with_fast_resume.torrent\n');
         process.stderr.write('\trtorrent-fast-resume [base-directory] plain.torrent [with_fast_resume.torrent]\n');
         process.exit(1);
     }
